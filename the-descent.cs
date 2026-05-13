@@ -20,25 +20,24 @@ class Player
         // game loop
         while (true)
         {
-            int BiggestMountain = 0;
-            int Target = 0;
+            int BiggestMountain = 0; // Height of the tallest mountain
+            int Target = 0; // Target location (index of the mountain)
 
-            for (int i = 0; i < 8; i++)
+            for (int i = 0; i < 8; i++) // Iterates through each mountain
             {
                 int mountainH = int.Parse(Console.ReadLine()); // represents the height of one mountain.
-                if (mountainH > BiggestMountain){
-                    BiggestMountain = mountainH;
-                    Target = i;
-
+                
+                if (mountainH > BiggestMountain) // Checks if the current mountain's height is greater than the tallest mountain recorded so far
+                { 
+                    BiggestMountain = mountainH; // If so, updates the value of the tallest mountain with the current one
+                    Target = i; // Assigns the current position 'i' (the mountain's index) as the new target
                 }
             }
 
             // Write an action using Console.WriteLine()
             // To debug: Console.Error.WriteLine("Debug messages...");
 
-
             Console.WriteLine(Target); // The index of the mountain to fire on.
-
         }
     }
 }
